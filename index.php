@@ -15,6 +15,8 @@
 
 	echo custom_array_sum($array);
 
+	echo "test";
+
 	/*for ($i = 0;  $i < count($array); $i++) 
 	{ 
 		echo $array[$i] . '</br>';
