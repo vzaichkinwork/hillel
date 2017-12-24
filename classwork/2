@@ -1,0 +1,6 @@
+<?php
+	
+	function grid($n, $m, $def) {
+
+	}
+

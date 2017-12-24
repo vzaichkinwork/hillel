@@ -1,39 +1,40 @@
 <?php
-	$array = [1, 2, 3, -5, 23];
+	function merge(Array $a, Array $b, $count){
+		
+	}
 
-	sort($array);
+	function merge_array(Array $a, Array $b){
+		$res = [];
+		$a_len = count($a);
+		$b_len = count($b)
 
-	function custom_array_sum($arr){
-		$res = 0;
+		if($a_len == $b_len) {
+			echo "Arrays are equal";
+			for($i = 0; $i < $a_len; $i++){
+				$res[$a[$i]] = $b[$i];
+			}	
+		} else {
+			echo "Array aren't equal";
+			if ($a_len > $b_len){
+				echo "Array a is bigger";
+				for(i = 0; $i < $b_len; $i++){
+				$res[$a[$i]] = $b[$i];
+				}
+			}else {
+				echo "Array b is bigger";
+				for(i = 0; $i < $b_len; $i++){
+					
+				}
+			}
 
-		foreach ($arr as $value) {
-			$res += $value;
+			}
 		}
 
-		return $res;
+		return[];
 	}
 
-	echo custom_array_sum($array);
+	function merge_array_compact(){
 
-	echo "test";
-
-	/*for ($i = 0;  $i < count($array); $i++) 
-	{ 
-		echo $array[$i] . '</br>';
-	}
-*/
-	/*echo 'before loop <br>';
-
-	foreach ($array as $elem) 
-	{
-		if ($elem % 2 == 0)
-		{
-			continue;
-		}
-		echo $elem . '</br>';
 	}
 
-	echo 'after loop <br>';*/
-
-
-?>
+	merge_array([], []);
