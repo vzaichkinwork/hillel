@@ -3,13 +3,14 @@
 -->
 
 <?php
-    $str1 = "The quick brown fox jumps over the lazy dog";
+    $str1 = "The  dddddddddddddffdfox jumpshhhhhhhhhhhhhhhhhhhhh over the lazy dog";
 
     $str2 = "fox jumps over the lazy dog";
 
     function is_pangram($string){ // todo
 
-        $alphabet = str_split("abcdefghijklmnopqrstuvwxyz");
+        $alphabet_letters = "abcdefghijklmnopqrstuvwxyz";
+        $alphabet = str_split($alphabet_letters);
         $string = str_replace( " ", "", $string);
         $string = strtolower($string);
         $string_by_elements = str_split($string);
@@ -24,20 +25,20 @@
         if($alphabet_len >= $string_len){
             echo "not a pangram";
         }else{
-            for ($i = 0; $i < $string_len; $i++){
-                if(in_array($string_by_elements[$i], $alphabet)){
-                    $result[] = $string_by_elements[$i];
+            foreach ($string_by_elements as $letter){
+                //если буква строки совпадает с буквой алфавита - добавляем её в новый массив
+                if(stristr($alphabet_letters, $string) === false){
+                    $result[] = $letter;
                 }
-                if(in_array($result[$i], $result)){
-                    unset($result[$i]);
-                }
-                echo '<pre>';
-                print_r($result);
-                echo '</pre>';
             }
-
+            //убираем повторяющиеся значения
+            $result = array_unique($result);
+            if(count($result) < $alphabet_len){
+                echo "not a pangram";
+            }elseif (count($result) == $alphabet_len){
+                echo "is pangram";
+            }
         }
-
         return;
     }
 
