@@ -7,26 +7,35 @@
 
     $str2 = "fox jumps over the lazy dog";
 
-    function is_pangram($string){
-        $result = false;
+    function is_pangram($string){ // todo
 
         $alphabet = str_split("abcdefghijklmnopqrstuvwxyz");
         $string = str_replace( " ", "", $string);
+        $string = strtolower($string);
         $string_by_elements = str_split($string);
 
-        $res = array();
+        $result = array();
 
-        for ($i = 0; $i < count($alphabet); $i++){
-            if($alphabet[$i] == $string_by_elements[$i]){
-                $res[] = $string_by_elements[$i];
-                $result = true;
-            }
-        }
+        //количество элементов массивов
+        $alphabet_len = count($alphabet);
+        $string_len = count($string_by_elements);
 
-        if(count($res) == count($alphabet)){
-            echo "Is pangram";
+        //если символов в строке меньше, чем в алфавите - это точно не панграмм
+        if($alphabet_len >= $string_len){
+            echo "not a pangram";
         }else{
-            echo "not enough symbols used";
+            for ($i = 0; $i < $string_len; $i++){
+                if(in_array($string_by_elements[$i], $alphabet)){
+                    $result[] = $string_by_elements[$i];
+                }
+                if(in_array($result[$i], $result)){
+                    unset($result[$i]);
+                }
+                echo '<pre>';
+                print_r($result);
+                echo '</pre>';
+            }
+
         }
 
         return;
