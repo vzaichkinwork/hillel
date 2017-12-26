@@ -22,7 +22,7 @@
 				}
 			}else {
 				echo "Array b is bigger";
-				for(i = 0; $i < $b_len; $i++){
+				for($i = 0; $i < $b_len; $i++){
 					
 				}
 			}
@@ -37,4 +37,4 @@
 
 	}
 
-	merge_array([], []);
+	#merge_array([], []);
