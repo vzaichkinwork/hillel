@@ -3,7 +3,7 @@
 -->
 
 <?php
-    $str1 = "The  dddddddddddddffdfox jumpshhhhhhhhhhhhhhhhhhhhh over the lazy dog";
+    $str1 = "The quick brown fox jumps over the lazy dog";
 
     $str2 = "fox jumps over the lazy dog";
 
