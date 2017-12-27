@@ -5,13 +5,9 @@
     $b = array(6, 7, 8, 9, 10);
     $c = array();
 
-    if (count($a) >= count($b)){
-        for($i = 0; $i < count($a); $i++) {
-            $c[] = $a[$i] . $b[$i];
-        }
-    }elseif (count($a) < count($b)){
-        for($i = 0; $i < count($b); $i++) {
-            $c[] = $a[$i] . $b[$i];
+    foreach ($a as $val1){
+        foreach ($b as $val2){
+            $c[] = $val2 . $val1;
         }
     }
 
