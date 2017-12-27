@@ -23,7 +23,7 @@
 
         //если символов в строке меньше, чем в алфавите - это точно не панграмм
         if($alphabet_len >= $string_len){
-            echo "not a pangram";
+            return false;
         }else{
             foreach ($string_by_elements as $letter){
                 //если буква строки совпадает с буквой алфавита - добавляем её в новый массив
@@ -34,13 +34,14 @@
             //убираем повторяющиеся значения
             $result = array_unique($result);
             if(count($result) < $alphabet_len){
-                echo "not a pangram";
+                return false;
             }elseif (count($result) == $alphabet_len){
-                echo "is pangram";
+                return true;
             }
         }
-        return;
     }
 
-    is_pangram($str1);
+    echo "string = " . $str1 . " - " .  is_pangram($str1);
+    echo '</br>';
+    echo "string = " . $str2 . " - " .  is_pangram($str2);
 
