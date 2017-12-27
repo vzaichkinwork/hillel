@@ -13,13 +13,22 @@
             array('', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM'),
             array('', 'M', 'MM', 'MMM'));
 
+        //перевели число в строку
         $num = strval($number);
-
+        
+        //длина строки
         $num_len = strlen($num);
-
+        
+        //если длина строки 1 - значит 1 символ, до 10
         if ($num_len == 1) {
+            
+            //бежим по общему массиву массивов
             foreach ($romans as $roman_array) {
+                
+                //бежим по подмассивам с цифрами
                 foreach ($roman_array as $key => $roman_number) {
+                    //если ключ подмассива равен нашему числу в виде строки
+                    // - меняем входящую строку на соответствующее значение 
                     if ($key == substr($num, 0, 1)) {
                         $num = $roman_number;
                         return $num;
