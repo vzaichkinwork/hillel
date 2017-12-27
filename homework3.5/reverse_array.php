@@ -7,10 +7,9 @@
 
     function reverse_array($array){
         $reversed_array = array();
-        $val = count($array) - 1;
-        for($i = 0; $i < count($array); $i++){
-            $reversed_array[$i] = $array[$val];
-            $val--;
+
+        for($i = count($array) - 1; $i >= 0;  $i--){
+            $reversed_array[] = $array[$i];
         }
         return $reversed_array;
     }
