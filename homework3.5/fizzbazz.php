@@ -11,16 +11,24 @@
         $a[] = $i + 1;
     }
 
-    foreach($a as $elem){
-        if($elem % 15 == 0){
-            echo "fizzBazz</br>";
-        }elseif($elem % 5 == 0){
-            echo "bazz</br>";
-        }elseif($elem % 3 == 0){
-            echo "fizz</br>";
-        }else{
-            echo $elem . '</br>';
+    function fizz_bazz($array){
+        if(!empty($array)){
+            foreach($array as $elem){
+                if($elem % 15 == 0){
+                    echo "fizzBazz</br>";
+                }elseif($elem % 5 == 0){
+                    echo "bazz</br>";
+                }elseif($elem % 3 == 0){
+                    echo "fizz</br>";
+                }else{
+                    echo $elem . '</br>';
+                }
+            }
         }
+        return;
     }
+
+    fizz_bazz($a);
+
 
 
